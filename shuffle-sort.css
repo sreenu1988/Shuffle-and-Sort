@@ -1,0 +1,164 @@
+ body{
+    display: grid;
+    grid: 0.5fr 2fr 9fr 1fr / 1fr; 
+    grid-template-areas: "header"
+                         "controls"
+                         "main  "
+                         "footer";
+    margin: 0;
+	padding:1em;
+	background-color:#000000;
+}
+main {
+	padding:0 3%;
+    display: grid;
+    grid: repeat(9, 1fr) / 1fr; 
+    grid-template-areas: "cell1"
+                         "cell2"
+                         "cell3"
+                         "cell4"
+                         "cell5"
+                         "cell6"
+                         "cell7"
+                         "cell8"
+                         "cell9";
+}
+.btn{
+    cursor: pointer;
+    width:25%;
+    background-color: #72c3dc;
+    color: #FFFFFF;
+    border:none;
+    height:10vh;
+    border-radius: 0.3rem;
+    box-shadow: 0 0.3rem #2B8EAD;
+    outline: none;
+	float:left;
+	margin-right:1%;
+}
+.btn:active {
+    box-shadow: 0 0.1rem #2f454e;
+    transform: translateY(0.2rem);
+}  
+header {
+	grid-area: header;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height:8vh;
+    font-size: 4vh;
+    padding-top:2%;
+	background-color:#333333;
+	color:#ffffff;
+}
+div.controls { 
+	grid-area: controls;
+	background-color:#FFFFFF;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main {
+	grid-area: main;
+	background-color:#FFFFFF;
+}
+footer { 
+    grid-area: footer;
+    background-color:#FFFFFF;
+    width: 100%;
+    text-align: center;
+    font-style: italic;
+	height:9vh;
+	padding-top:1%;
+}
+.cell1 { grid-area: cell1}
+.cell2 { grid-area: cell2}
+.cell3 { grid-area: cell3}
+.cell4 { grid-area: cell4}
+.cell5 { grid-area: cell5}
+.cell6 { grid-area: cell6}
+.cell7 { grid-area: cell7}
+.cell8 { grid-area: cell8}
+.cell9 { grid-area: cell9}
+.box2, .box4{
+	border-left: 2vw solid #2B8EAD;
+}
+.box8, .box1{
+	border-left: 2vw solid #6F98A8;
+}
+.box7, .box6{
+	border-left: 2vw solid #BFBFBF;
+}
+.box3, .box5, .box9{
+	border-left: 2vw solid #2F454E;
+}
+main div{
+	color:#000000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 2em;
+	margin-bottom:1vh;
+	background-color:#EFEFEF;
+}
+@media screen and (min-width: 900px) {
+	body{
+		display: grid;
+		grid: 1fr 9fr 2fr / 3fr 1fr; 
+		grid-template-areas: "header header"
+							 "main controls"
+							 "footer footer";
+		grid-gap: 0px;
+		margin: 1em;
+		background-color:#FFFFFF;
+	}
+	main {
+		background-color:#EFEFEF;
+		padding:0;
+		border-top:3px solid #BFBFBF;
+		display: grid;
+		grid: "cell1 cell2 cell3" 32%
+			  "cell4 cell5 cell6" 32%
+			  "cell7 cell8 cell9" 32%/
+			  1fr 1fr 1fr;
+		
+	}
+	.box2, .box4{
+		background-color:#2B8EAD;
+	}
+	.box8, .box1{
+		background-color:#6F98A8;
+	}
+	.box7, .box6{
+		background-color:#BFBFBF;
+	}
+	.box3, .box5, .box9{
+		background-color:#2F454E;
+	}
+	main div{
+		color:#ffffff;
+		font-size: 4em;
+		height: 3em;
+	}
+	header {
+		height: 5vh;
+		background-color:#FFFFFF;
+		color:#000000;
+	}
+	div.controls { 
+		background-color:#EFEFEF;
+		padding: 10%;
+		display: block;
+		border-top:3px solid #BFBFBF;
+	}
+	footer{
+		background-color:#EFEFEF;
+		height:11vh;
+	}
+	.btn{
+		cursor: pointer;
+		width:100%;
+		margin-bottom: 5vh;
+		height:10vh;
+	}
+}
